@@ -1,65 +1,85 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React from "react";
+import Box from "@material-ui/core/Box";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
+import Avatar from "@material-ui/core/Avatar";
+import Grid from "@material-ui/core/Grid";
+import Hero from "../components/Hero.component";
 
-export default function Home() {
+const useStyles = makeStyles((theme) => ({
+  avatar: {
+    height: "300px",
+    width: "300px",
+    borderRadius: "150px",
+  },
+  about: {
+    fontFamily: "Roboto",
+    fontWeight: "300",
+  },
+  box: {
+    color: "#f6f6f6",
+    backgroundImage:
+      "linear-gradient(to bottom, rgba(0, 0, 0, 0.87), rgb(178 158 158 / 14%))",
+    borderRadius: "10px",
+  },
+}));
+
+const Home = () => {
+  const classes = useStyles();
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
+    <>
+      <Hero content="Hi, I'm Daria" backgroundSrc="/images/hero-medium.jpeg"/>
+      <Container maxWidth="md">
+        <Box mt="5rem">
+          <Grid
+            container
+            spacing={8}
+            direction="column"
+            justify="center"
+            alignItems="center"
           >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
-}
+            <Typography variant="h4" className={classes.about}>
+              A LITTLE BIT ABOUT ME
+            </Typography>
+            <Grid item>
+              <Avatar
+                alt="Remy Sharp"
+                src="/images/avatar.jpeg"
+                className={classes.avatar}
+              />
+            </Grid>
+            <Grid item align="center" xs={12} sm={10} md={12}>
+              <Typography variant="h6" className={classes.about}>
+                Hey! My name is Daria and I'm a web developer with a passion for
+                front end and back end development. I aspire toward a career
+                that will allow me to channel my creativity through crafting
+                beautiful software and engaging experiences.
+                <br />
+                .......
+                <br />
+                When I'm not on the computer, I enjoy volleyball, working out in the park, and
+                petting my cat.
+              </Typography>
+              <Box p={5} my={10} className={classes.box}>
+                <Typography variant="h4">FULL STACK WEB DEVELOPER</Typography>
+                <Typography variant="h4">
+                  .......................................
+                </Typography>
+                <Typography variant="h5">
+                  Made in Russia | Based in LA | Cat Lover | Traveler
+                  <br />I grasp new concepts and ideas quickly
+                </Typography>
+                <Typography variant="h4">
+                  ........................................
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
+      </Container>
+    </>
+  );
+};
+export default Home;
