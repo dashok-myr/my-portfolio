@@ -11,7 +11,7 @@ const useStyles = makeStyles({
           : ""
       } url('${backgroundSrc}')`,
     height: "500px",
-    backgroundPosition: "center",
+    backgroundPosition: "bottom",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     position: "relative",

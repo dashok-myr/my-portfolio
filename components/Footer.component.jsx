@@ -7,8 +7,8 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
-import CustomButton from "./MyButton.component";
+import MyButton from "./MyButton.component";
+import Link from "next/link";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
   btn: {
     backgroundColor: theme.palette.common.blue,
-    color: "white"
+    color: "white",
   },
 }));
 
@@ -50,7 +50,7 @@ export default function FooterComponent() {
   const classes = useStyles();
 
   return (
-    <footer className={classes.footer} >
+    <footer className={classes.footer}>
       <Grid container justify="center">
         <Grid
           item
@@ -68,7 +68,9 @@ export default function FooterComponent() {
               <Box pb={3}>Have any questions?</Box>
             </Grid>
             <Grid item>
-              <CustomButton content="SAY HELLO"/>
+              <Link href="/contact">
+                <MyButton content="SAY HELLO" />
+              </Link>
             </Grid>
           </Grid>
         </Grid>
@@ -98,11 +100,12 @@ export default function FooterComponent() {
                 <Box pl={2}>ON INSTAGRAM</Box>
               </Grid>
             </Grid>
+
             <Grid
               item
               className={classes.link}
               component={"a"}
-              href="/"
+              href="https://www.facebook.com/daria.usatyuk"
               target="_blank"
             >
               <Grid container alignItems="center">
@@ -110,11 +113,12 @@ export default function FooterComponent() {
                 <Box pl={2}>ON FACEBOOK</Box>
               </Grid>
             </Grid>
+
             <Grid
               item
               className={classes.link}
               component={"a"}
-              href="/"
+              href="https://github.com/dashok-myr"
               target="_blank"
             >
               <Grid container alignItems="center">

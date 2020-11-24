@@ -16,5 +16,8 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-hook-form": "^6.9.1"
+  },
+  "devDependencies": {
+    "emailjs-com": "^2.6.4"
   }
 }

@@ -9,6 +9,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useForm } from "react-hook-form";
 import Box from "@material-ui/core/Box";
+import emailjs from "emailjs-com";
+import getConfig from "next/config";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -35,8 +37,30 @@ export default function ContactForm() {
   const classes = useStyles();
   const { register, handleSubmit, errors } = useForm();
 
+  const submitEmail = async (data, e) => {
+    const {
+      publicRuntimeConfig: {
+        emailJsUserID,
+        emailJsServiceID,
+        emailJsTemplateID,
+      },
+    } = getConfig();
+
+    try {
+      const result = await emailjs.sendForm(
+        emailJsServiceID,
+        emailJsTemplateID,
+        e.target,
+        emailJsUserID
+      );
+      console.log(result.text);
+    } catch (e) {
+      console.error(e.text);
+    }
+  };
+
   return (
-    <Box mb={5}>
+    <Box mb={5} id="sexy">
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
@@ -46,19 +70,16 @@ export default function ContactForm() {
           <Typography component="h1" variant="h5">
             Have Questions?
           </Typography>
-          <form
-            className={classes.form}
-            onSubmit={handleSubmit((data) => alert(JSON.stringify(data)))}
-          >
+          <form className={classes.form} onSubmit={handleSubmit(submitEmail)}>
             <TextField
               variant="outlined"
               margin="normal"
               required
               fullWidth
-              name="name"
+              name="from_name"
               label="Name"
               type="text"
-              id="name"
+              id="from_name"
               autoComplete="current-name"
               inputRef={register}
             />

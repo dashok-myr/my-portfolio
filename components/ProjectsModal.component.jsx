@@ -1,20 +1,14 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import Button from "@material-ui/core/Button";
-import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Hero from "./Hero.component";
 import Container from "@material-ui/core/Container";
-import CustomButton from "./MyButton.component";
+import MyButton from "./MyButton.component";
 
 const useStyles = makeStyles((theme) => ({
-  carbon: {
-    backgroundColor: "#cdc9c3", //light gray
-    height: "80px",
-  },
   tab: {
     fontFamily: "Lato",
     textTransform: "none",
@@ -27,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     left: "50%",
     transform: `translate(-50%, -50%)`,
     position: "absolute",
+    maxWidth: "950px",
     width: "85%",
     height: "auto",
     backgroundColor: theme.palette.background.paper,
@@ -42,7 +37,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ProjectsModal() {
+export default function ProjectsModal({
+  imgUrl,
+  heading,
+  modalContent,
+  gitHubUrl,
+  url,
+}) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -56,7 +57,7 @@ export default function ProjectsModal() {
 
   return (
     <div>
-      <CustomButton content="VIEW" onClick={handleOpen} />
+      <MyButton content="VIEW" onClick={handleOpen} />
       <Modal
         open={open}
         onClose={handleClose}
@@ -66,31 +67,31 @@ export default function ProjectsModal() {
         <div className={classes.modal}>
           <Hero
             content=""
-            backgroundSrc="/images/face-detection.png"
+            backgroundSrc={`/images/${imgUrl}`}
             shouldUseGradient={false}
           />
           <Container maxWidth="md">
             <Grid container justify="center">
               <Box mb={3}>
-                <Typography variant="h6">FACE DETECTION</Typography>
+                <Typography variant="h6">{heading}</Typography>
               </Box>
             </Grid>
             <Box mb={5}>
-            <Typography className={classes.description}>
-              In the spirit of wishing the world peace and joy during the 2015
-              holiday season, Mullen built a site around an algorithm that
-              generates a holiday greeting to each and every person on the
-              planet. We also accounted for newcomers being added at an amazing
-              rate.
-            </Typography>
+              <Typography className={classes.description}>
+                {modalContent}
+              </Typography>
             </Box>
             <Box mb={4}>
               <Grid container justify="space-evenly">
                 <Grid item>
-                  <CustomButton content="VIEW SOURCE" />
+                  <MyButton
+                    content="VIEW SOURCE"
+                    href={gitHubUrl}
+                    target="_blank"
+                  />
                 </Grid>
                 <Grid item>
-                  <CustomButton content="SEE WEBSITE" />
+                  <MyButton content="SEE WEBSITE" href={url} target="_blank" />
                 </Grid>
               </Grid>
             </Box>
