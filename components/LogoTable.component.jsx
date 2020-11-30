@@ -5,15 +5,9 @@ import Box from "@material-ui/core/Box";
 import { Typography } from "@material-ui/core";
 
 const logoTableData = [
-  ["Html", "CSS", "SASS", "BootStrap", "Material-Ui"],
-  ["Python", "MongoDB", "React", "Redux", "JavaScript"],
-  [
-    "Firebase",
-    "Heroku",
-    "PostgresQL",
-    "TypeScript",
-    "GraphQL",
-  ],
+  ["Html", "CSS", "SASS", "BootStrap", "Material-UI"],
+  ["Python", "MongoDB", "NodeJS", "Redux", "JavaScript"],
+  ["Firebase", "Heroku", "PostgresQL", "TypeScript", "GraphQL"],
 ];
 
 const LogoTable = () => {
