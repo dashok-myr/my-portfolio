@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 const Cards = () => {
   const classes = useStyles();
   return (
-    <Container className={classes.cardGrid} maxWidth="md">
+    <Container className={classes.cardGrid} maxWidth="lg">
       <Grid container justify="center" alignItems="center" spacing={4}>
         {projectsData.map((props, index) => (
           <MyCard key={index} {...props} />

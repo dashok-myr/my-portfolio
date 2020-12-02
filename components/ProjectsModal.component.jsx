@@ -4,26 +4,27 @@ import Modal from "@material-ui/core/Modal";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import Hero from "./Hero.component";
 import Container from "@material-ui/core/Container";
 import MyButton from "./MyButton.component";
+import { useTheme } from "@material-ui/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import CardMedia from "@material-ui/core/CardMedia";
 
 const useStyles = makeStyles((theme) => ({
-  tab: {
-    fontFamily: "Lato",
-    textTransform: "none",
-    fontWeight: "300",
-    fontSize: "2rem",
-    color: "#555555", //dark gray
+  hero: {
+    height: "350px",
+  },
+  heroMobile: {
+    height: "45%",
   },
   modal: {
     top: "50%",
     left: "50%",
     transform: `translate(-50%, -50%)`,
     position: "absolute",
-    maxWidth: "950px",
-    width: "85%",
-    height: "auto",
+    maxWidth: "650px",
+    width: "80%",
+    height: "77%",
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
@@ -33,7 +34,13 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     fontFamily: "Roboto Slab",
     fontWeight: "400",
-    fontSize: "1.1rem",
+    fontSize: "1rem",
+  },
+  description2: {
+    textAlign: "center",
+    fontFamily: "Roboto Slab",
+    fontWeight: "400",
+    fontSize: "0.8rem",
   },
 }));
 
@@ -45,6 +52,8 @@ export default function ProjectsModal({
   url,
 }) {
   const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
@@ -65,37 +74,47 @@ export default function ProjectsModal({
         aria-describedby="simple-modal-description"
       >
         <div className={classes.modal}>
-          <Hero
-            content=""
-            backgroundSrc={`/images/${imgUrl}`}
-            shouldUseGradient={false}
+          <CardMedia
+            className={isMobile ? classes.heroMobile : classes.hero}
+            image={`/images/${imgUrl}`}
+            title="Image title"
           />
-          <Container maxWidth="md">
-            <Grid container justify="center">
-              <Box mb={3}>
+          <>
+            <Grid container justify="center" alignContent="center">
+              <Box mb={2} mt={2}>
                 <Typography variant="h6">{heading}</Typography>
               </Box>
             </Grid>
-            <Box mb={5}>
-              <Typography className={classes.description}>
+            <Box mb={2}>
+              <Typography
+                className={
+                  isMobile ? classes.description2 : classes.description
+                }
+              >
                 {modalContent}
               </Typography>
             </Box>
-            <Box mb={4}>
+            <Box mb={2}>
               <Grid container justify="space-evenly">
                 <Grid item>
                   <MyButton
-                    content="VIEW SOURCE"
+                    size="small"
+                    content="SOURCE"
                     href={gitHubUrl}
                     target="_blank"
                   />
                 </Grid>
                 <Grid item>
-                  <MyButton content="SEE WEBSITE" href={url} target="_blank" />
+                  <MyButton
+                    size="small"
+                    content="WEBSITE"
+                    href={url}
+                    target="_blank"
+                  />
                 </Grid>
               </Grid>
             </Box>
-          </Container>
+          </>
         </div>
       </Modal>
     </div>

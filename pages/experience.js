@@ -26,7 +26,7 @@ const Experience = () => {
       />
       <Container maxWidth="md">
         <Box my={5}>
-          <Grid container justify="center">
+          <Grid container justify="center" align="center">
             <Typography variant="h4" className={classes.about}>
               A Little Bit Of My Experience
             </Typography>

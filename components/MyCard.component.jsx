@@ -31,7 +31,7 @@ const MyCard = ({ imgUrl, heading, ...otherProps }) => {
   const classes = useStyles();
 
   return (
-    <Grid item xs={12} sm={8} md={6}>
+    <Grid item xs={12} md={6} lg={4}>
       <Card className={classes.card}>
         <CardActionArea>
           <CardMedia

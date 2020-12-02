@@ -18,7 +18,7 @@ const LogoItem = ({ logoName }) => {
   return (
     <Box p={2}>
       <Grid item>
-        <Tooltip
+      <Tooltip
           title={logoName}
         >
           <Avatar
