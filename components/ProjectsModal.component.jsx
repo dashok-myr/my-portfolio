@@ -80,40 +80,42 @@ export default function ProjectsModal({
             title="Image title"
           />
           <>
-            <Grid container justify="center" alignContent="center">
-              <Box mb={2} mt={2}>
-                <Typography variant="h6">{heading}</Typography>
+            <Grid container justify="center" alignContent="center" alignItems="center">
+              <Grid container justify="center" alignContent="center" >
+                <Box mb={2} mt={5}>
+                  <Typography variant="h6">{heading}</Typography>
+                </Box>
+              </Grid>
+              <Box mb={2}>
+                <Typography
+                  className={
+                    isMobile ? classes.description2 : classes.description
+                  }
+                >
+                  {modalContent}
+                </Typography>
+              </Box>
+              <Box mb={2}>
+                <Grid container justify="space-evenly">
+                  <Grid item>
+                    <MyButton
+                      size="small"
+                      content="SOURCE"
+                      href={gitHubUrl}
+                      target="_blank"
+                    />
+                  </Grid>
+                  <Grid item>
+                    <MyButton
+                      size="small"
+                      content="WEBSITE"
+                      href={url}
+                      target="_blank"
+                    />
+                  </Grid>
+                </Grid>
               </Box>
             </Grid>
-            <Box mb={2}>
-              <Typography
-                className={
-                  isMobile ? classes.description2 : classes.description
-                }
-              >
-                {modalContent}
-              </Typography>
-            </Box>
-            <Box mb={2}>
-              <Grid container justify="space-evenly">
-                <Grid item>
-                  <MyButton
-                    size="small"
-                    content="SOURCE"
-                    href={gitHubUrl}
-                    target="_blank"
-                  />
-                </Grid>
-                <Grid item>
-                  <MyButton
-                    size="small"
-                    content="WEBSITE"
-                    href={url}
-                    target="_blank"
-                  />
-                </Grid>
-              </Grid>
-            </Box>
           </>
         </div>
       </Modal>
