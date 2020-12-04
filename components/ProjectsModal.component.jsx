@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     maxWidth: "650px",
     width: "80%",
-    height: "77%",
+    height: "74%",
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
@@ -82,7 +82,7 @@ export default function ProjectsModal({
           <>
             <Grid container justify="center" alignContent="center" alignItems="center">
               <Grid container justify="center" alignContent="center" >
-                <Box mb={2} mt={5}>
+                <Box mb={2} mt={3}>
                   <Typography variant="h6">{heading}</Typography>
                 </Box>
               </Grid>
