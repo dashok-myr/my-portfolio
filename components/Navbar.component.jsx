@@ -62,7 +62,7 @@ export default function Navbar() {
   const classes = useStyles();
   const router = useRouter();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [tabValue, setTabValue] = useState(null);
   const [toggleDrawer, setToggleDrawer] = useState(false);
 

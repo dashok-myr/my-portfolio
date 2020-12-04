@@ -24,7 +24,7 @@ const Experience = () => {
         content="My Experience"
         backgroundSrc="/images/hero-experience-md.jpg"
       />
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Box my={5}>
           <Grid container justify="center" align="center">
             <Typography variant="h4" className={classes.about}>

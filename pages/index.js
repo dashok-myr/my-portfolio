@@ -30,52 +30,44 @@ const Home = () => {
 
   return (
     <>
-      <Hero content="Hi, I'm Daria" backgroundSrc="/images/hero-medium.jpeg"/>
-      <Container maxWidth="md">
-        <Box mt="5rem">
-          <Grid
-            container
-            spacing={8}
-            direction="column"
-            justify="center"
-            alignItems="center"
-          >
+      <Hero content="Hi, I'm Daria" backgroundSrc="/images/hero-medium.jpeg" />
+      <Container maxWidth="lg">
+        <Box justifyContent="center" mt="5rem">
+          <Grid item align="center">
             <Typography variant="h4" className={classes.about}>
               A LITTLE BIT ABOUT ME
             </Typography>
-            <Grid item>
+          </Grid>
+          <Box my={8}>
+            <Grid item align="center">
               <Avatar
                 alt="Remy Sharp"
                 src="/images/avatar.jpeg"
                 className={classes.avatar}
               />
             </Grid>
-            <Grid item align="center" xs={12} sm={10} md={12}>
-              <Typography variant="h6" className={classes.about}>
-                Hey! My name is Daria and I'm a web developer with a passion for
-                front end and back end development. I aspire toward a career
-                that will allow me to channel my creativity through crafting
-                beautiful software and engaging experiences.
-                <br />
-                .......
-                <br />
-                When I'm not on the computer, I enjoy volleyball, working out in the park, and
-                petting my cat.
+          </Box>
+          <Grid item align="center">
+            <Typography variant="h6" className={classes.about}>
+              Hey! My name is Daria and I'm a web developer with a passion for
+              front end and back end development. I aspire toward a career that
+              will allow me to channel my creativity through crafting beautiful
+              software and engaging experiences.
+              <br />
+              .......
+              <br />
+              When I'm not on the computer, I enjoy volleyball, working out in
+              the park, and petting my cat.
+            </Typography>
+            <Box p={5} my={10} className={classes.box}>
+              <Typography variant="h4">FULL STACK WEB DEVELOPER</Typography>
+              <Typography variant="h4">.................</Typography>
+              <Typography variant="h5">
+                Made in Russia | Based in LA | Cat Lover | Traveler
+                <br />I grasp new concepts and ideas quickly
               </Typography>
-              <Box p={5} my={10} className={classes.box}>
-                <Typography variant="h4">FULL STACK WEB DEVELOPER</Typography>
-                <Typography variant="h4">
-                  .......................................
-                </Typography>
-                <Typography variant="h5">
-                  Made in Russia | Based in LA | Cat Lover | Traveler
-                  <br />I grasp new concepts and ideas quickly
-                </Typography>
-                <Typography variant="h4">
-                  ........................................
-                </Typography>
-              </Box>
-            </Grid>
+              <Typography variant="h4">..................</Typography>
+            </Box>
           </Grid>
         </Box>
       </Container>

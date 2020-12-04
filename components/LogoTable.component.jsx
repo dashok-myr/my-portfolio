@@ -17,7 +17,7 @@ const LogoTable = () => {
         <Typography variant="h6">
           SOME TECHNOLOGIES I'VE WORKED WITH:
         </Typography>
-        <Box pt={5} mb={15}>
+        <Box flexWrap="wrap" pt={5} mb={15}>
           {logoTableData.map((row, index) => {
             return <LogoRow key={index} logoRow={row} />;
           })}
