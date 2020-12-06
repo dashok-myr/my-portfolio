@@ -51,7 +51,7 @@ const Experience = () => {
               <Typography variant="h6">
                 I'M FALLING IN LOVE WITH REACT.
               </Typography>
-              <Box py={5}>
+              <Box>
                 <ReactAnimation />
               </Box>
             </Grid>
