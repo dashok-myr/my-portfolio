@@ -42,19 +42,18 @@ const Experience = () => {
         </Box>
       </Container>
       <Container maxWidth="lg">
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="space-around"
-          flexWrap="wrap"
-        >
+        <Box display="flex" justifyContent="space-around" flexWrap="wrap">
           <Box>
             <LogoTable />
           </Box>
-          <Box pb={11}>
+          <Box>
             <Grid item align="center">
-              <Typography variant="h6">I'M FALLING IN LOVE WITH REACT.</Typography>
-              <ReactAnimation />
+              <Typography variant="h6">
+                I'M FALLING IN LOVE WITH REACT.
+              </Typography>
+              <Box py={5}>
+                <ReactAnimation />
+              </Box>
             </Grid>
           </Box>
         </Box>

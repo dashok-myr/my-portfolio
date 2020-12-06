@@ -60,7 +60,7 @@ export default function ContactForm() {
   };
 
   return (
-    <Box mb={5} id="sexy">
+    <Box mb={5}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
