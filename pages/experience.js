@@ -35,8 +35,16 @@ const Experience = () => {
         <Box mb={10}>
           <Grid item align="center">
             <Typography variant="h6" className={classes.about}>
-              I've been doing web development for about 2 years now, and I'm
-              always eager to learn more in this fast paced industry.
+              I've been doing web development for about 2 years now; mainly working as a freelancer. I've been building
+              E-commerce, SEO friendly and SPA web applications, for various clients in the Chicago and LA areas.
+              <br />
+              My expertise reside in Front-end development; working with React, Redux, NextJS, etc.
+              <br />
+              .......
+              <br />
+              I'm eager to learn more in this fast paced industry, so I'm always looking for ways to further increase my
+              growth as a Software Engineer... I take every obstacle as a chance for improvement, so I do my very best to
+              take every opportunity I'm given.
             </Typography>
           </Grid>
         </Box>

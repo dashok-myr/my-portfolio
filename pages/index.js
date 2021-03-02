@@ -49,15 +49,29 @@ const Home = () => {
           </Box>
           <Grid item align="center">
             <Typography variant="h6" className={classes.about}>
-              Hey! My name is Daria and I'm a web developer with a passion for
-              front end and back end development. I aspire toward a career that
-              will allow me to channel my creativity through crafting beautiful
-              software and engaging experiences.
+              Hey! My name is Daria and I was born in Russia. My city is located just north of the Arctic Circle.
+              <br />
+              Ever since I was a little girl, I had an active mind and optimistic outlook of life. I always found myself
+              seeing the possibilities everywhere.
+              <br />
+              <br />
+              At age 13, I was already dreaming of how I could have a life of adventure. I was daydreaming about moving
+              to a big city, more specifically, a city on the west coast of the United States.
+              <br />
+              When I was 22 years old, after completing my bachelor's and master's degree in Cross-cultural Communications
+              and International Relations at Belgorod State University, I decided to step forward and pursue my dreams.
+              I bought a one-way ticket to the beautiful city I always dreamed of seeing.
+              <br />
+              <br />
+              Now, forwarding a few years later, I've found my passion in Software Engineering, because, I've always
+              been obsessed with creating things, and even more obsessed with making things better. I aspire toward a
+              career that will allow me to channel my creativity through crafting beautiful software and engaging
+              user-experiences while living next to the beach. 🏖️
               <br />
               .......
               <br />
-              When I'm not on the computer, I enjoy volleyball, working out in
-              the park, and petting my cat.
+              When I'm not on the computer, I'm probably hanging out with my husband, enjoy knitting,
+              working out in the park and petting my cat.
             </Typography>
             <Box p={5} my={10} className={classes.box}>
               <Typography variant="h4">FULL STACK WEB DEVELOPER</Typography>
