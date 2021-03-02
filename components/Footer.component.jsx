@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import Icon from "@material-ui/core/Icon";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import Box from "@material-ui/core/Box";
 import MyButton from "./MyButton.component";
@@ -80,12 +80,12 @@ export default function FooterComponent() {
               item
               className={classes.link}
               component={"a"}
-              href="mailto:dashok.myr@gmail.com"
+              href="https://www.linkedin.com/in/dariausatyuk/"
               target="_blank"
             >
               <Grid container alignItems="center">
-                <Icon component={MailOutlineIcon} />
-                <Box pl={2}>DASHOK.MYR@GMAIL.COM</Box>
+                <Icon component={LinkedInIcon} />
+                <Box pl={2}>ON LINKEDIN</Box>
               </Grid>
             </Grid>
             <Grid
@@ -100,7 +100,6 @@ export default function FooterComponent() {
                 <Box pl={2}>ON INSTAGRAM</Box>
               </Grid>
             </Grid>
-
             <Grid
               item
               className={classes.link}
@@ -113,7 +112,6 @@ export default function FooterComponent() {
                 <Box pl={2}>ON FACEBOOK</Box>
               </Grid>
             </Grid>
-
             <Grid
               item
               className={classes.link}
