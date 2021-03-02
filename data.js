@@ -7,7 +7,7 @@ export const projectsData = [
       " digital images. The goal for the project was to have an experience using various API. Built using React, " +
       "Firebase and Heroku.",
     gitHubUrl: "https://github.com/dashok-myr/face-detection",
-    url: "https://sheltered-earth-41271.herokuapp.com/",
+    url: "https://face-detection-react-daria.herokuapp.com/",
   },
   {
     imgUrl: "wedding.png",
